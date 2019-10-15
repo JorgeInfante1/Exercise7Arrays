@@ -1,50 +1,90 @@
 package com.exercise7arrays;
 
+import java.util.Random;
 public class Arrays1D 
 {
 
 	public static void main(String[] args) 
 	{
 		//Constant Declaration
-		final int ELEMENTS_ARRAY=10;
+		final int ELEMENTS_ARRAY=100;
+		//Variables Declaration
+		double generatedNumber=0;
+		int generatedNumberInt=0;
+		byte generatedNumberByte=0;
+		
+		byte evenValues=0;
+		byte oddValues=0;
+		byte zeroValues=0;
+		byte positiveValues=0;
 		//Arrays declaration
-		//1st Way
-		int[] intArray=new int[ELEMENTS_ARRAY];
-		char[] charArray=new char[ELEMENTS_ARRAY];
-		boolean[] boolArray=new boolean[ELEMENTS_ARRAY];
-		double[] dblArray=new double[ELEMENTS_ARRAY];
-		String[] strArray=new String[ELEMENTS_ARRAY];
+		byte[] myArray1=new byte[ELEMENTS_ARRAY];
 		
+		//Array pseudo random numbers
+		//Way 1 by means of Random Class
+		Random randomNumbers=new Random(System.currentTimeMillis());//Or System.nanoTime()
 		
-		int[] intArray2= {10,20,30,40,50,60};
-		char[] charArray2= {'a','b','c','d','e'};
-		boolean[] boolArray2= {true,false,true,false,true};
-		double[] dblArray2= {1.0,2.0,3.0,4.0,5.0};
-		String[] strArray2= {"firts","Second","Third","Fourth","Fifth"};
-		
-		for(int i=0;i<intArray2.length;i++)
+		for(int i=0;i<ELEMENTS_ARRAY;i++)
 		{
-			System.out.println(intArray2[i]);
-		}
-		for(int i=0;i<charArray2.length;i++)
-		{
-			System.out.println(charArray2[i]);
-		}
-		for(int i=0;i<boolArray2.length;i++)
-		{
-			System.out.println(boolArray2[i]);
-		}
-		for(int i=0;i<dblArray2.length;i++)
-		{
-			System.out.println(dblArray2[i]);
-		}
-		for(int i=0;i<strArray2.length;i++)
-		{
-			System.out.println(strArray2[i]);
+			
+			generatedNumber=randomNumbers.nextDouble();
+			System.out.println(generatedNumber);
 		}
 		
+		for(int i=0;i<ELEMENTS_ARRAY;i++)
+		{
+			
+			generatedNumberInt=randomNumbers.nextInt(51)+50;
+			System.out.println(generatedNumberInt);
+		}
+		//Way 2 by means of Math Class
 		
 		
+		for(int i=0;i<ELEMENTS_ARRAY;i++)
+		{
+			generatedNumberInt=(int) (Math.random()*51+50);
+			//generatedNumberInt=(int) generatedNumber;
+			System.out.println(generatedNumberInt);
+		}
+		
+		//Pass 1 Initialize
+		for(int i=0;i<myArray1.length;i++)
+		{
+			generatedNumberByte= (byte) randomNumbers.nextInt(101);
+			System.out.println(generatedNumberInt);
+			myArray1[i]=generatedNumberByte;
+		}
+		
+		//Pass 2 Process
+		for(int i=0;i<ELEMENTS_ARRAY;i++)
+		{
+			
+			if(myArray1[i]==0)
+			{
+				zeroValues++;
+			}
+			else if(myArray1[i]%2==0)
+			{
+				evenValues++;
+				
+			}
+			else if(myArray1[i]%2==1)
+			{
+				
+				oddValues++;
+			}
+			else if(myArray1[i]>0)
+			{
+				positiveValues++;
+				
+			}
+		}
+		
+		//Pass 3 Visualization
+		System.out.println("Zeros Quantity: "+zeroValues);
+		System.out.println("Odd Values: "+zeroValues);
+		System.out.println("Even Values: "+zeroValues);
+		System.out.println("Positive Values: "+zeroValues);
 
 	}
 
