@@ -5,7 +5,7 @@ public class primosArray {
 
 	public static void main(String[] args) {
 		//Constant Declaration
-		final int ELEMENTS_ARRAY=100;
+		final int ELEMENTS_ARRAY=10;
 		
 		//Variable declaration
 		byte primeNumbers=0;
@@ -32,7 +32,7 @@ public class primosArray {
         for(int i=0;i<ELEMENTS_ARRAY;i++)
         {
         	isPrime=true;
-        	for(int j=2;j<vector[i];i++)
+        	for(int j=2;j<vector[i];j++)
         	{
         		if(vector[i]%j==0)
         		{

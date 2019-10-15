@@ -82,9 +82,9 @@ public class Arrays1D
 		
 		//Pass 3 Visualization
 		System.out.println("Zeros Quantity: "+zeroValues);
-		System.out.println("Odd Values: "+zeroValues);
-		System.out.println("Even Values: "+zeroValues);
-		System.out.println("Positive Values: "+zeroValues);
+		System.out.println("Odd Values: "+oddValues);
+		System.out.println("Even Values: "+evenValues);
+		System.out.println("Positive Values: "+positiveValues);
 
 	}
 
